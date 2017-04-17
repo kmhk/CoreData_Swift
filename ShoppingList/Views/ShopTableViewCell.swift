@@ -1,5 +1,5 @@
 //
-//  ShoppingTableViewCell.swift
+//  ShopTableViewCell.swift
 //  ShoppingList
 //
 //  Created by user on 4/16/17.
@@ -8,9 +8,9 @@
 
 import UIKit
 
-class ShoppingTableViewCell: UITableViewCell {
+class ShopTableViewCell: UITableViewCell {
 	
-	static var cellID = "ShoppingTableViewCell"
+	static var cellID = "ShopTableViewCell"
 	
 	@IBOutlet weak var btnRemove: UIButton!
 	@IBOutlet weak var lblName: UILabel!

@@ -1,17 +1,17 @@
 //
-//  AddListViewController.swift
+//  AddShopViewController.swift
 //  ShoppingList
 //
-//  Created by user on 4/17/17.
+//  Created by user on 4/18/17.
 //  Copyright © 2017 user. All rights reserved.
 //
 
 import UIKit
 
-class AddListViewController: UIViewController {
-
-	@IBOutlet weak var txtListName: UITextField!
+class AddShopViewController: UIViewController {
 	
+	@IBOutlet weak var txtListName: UITextField!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,13 +22,13 @@ class AddListViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+	
 	@IBAction func addBtnTapped(_ sender: Any) {
 		guard (txtListName.text?.lengthOfBytes(using: .utf8))! > 0 else {
 			return
 		}
 		
-		for item in Helper.shared().shoppingItems {
+		for item in Helper.shared().shops {
 			if item.name?.isEqual(txtListName.text) == true {
 				let alert = UIAlertController(title: "", message: "It is already existing.", preferredStyle: .alert)
 				alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
@@ -37,7 +37,7 @@ class AddListViewController: UIViewController {
 			}
 		}
 		
-		Helper.shared().addShoppingItem(name: txtListName.text!)
+		Helper.shared().addShop(name: txtListName.text!)
 		
 		self.navigationController?.popViewController(animated: true)
 	}

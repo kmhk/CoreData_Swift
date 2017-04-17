@@ -18,7 +18,7 @@ class Helper: NSObject {
 	static var coreData = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 	
 	// MARK: public members
-	var shoppingItems = [ShoppingItem]()
+	var shops = [Shop]()
 	
 	
 	// MARK: - static methods
@@ -36,27 +36,27 @@ class Helper: NSObject {
 		Helper.App.saveContext()
 	}
 	
-	func getShoppingItems() -> [ShoppingItem] {
+	func getShopList() -> [Shop] {
 		do {
-			shoppingItems = try Helper.coreData.fetch(ShoppingItem.fetchRequest())
+			shops = try Helper.coreData.fetch(Shop.fetchRequest())
 		} catch {
 			print("Fetch core data failed!")
 		}
 		
-		return shoppingItems
+		return shops
 	}
 	
-	func addShoppingItem(name: String) {
-		let item = ShoppingItem(context: Helper.coreData)
+	func addShop(name: String) {
+		let item = Shop(context: Helper.coreData)
 		item.name = name
 		
 		// save core data
 		self.saveCoreData()
 	}
 	
-	func removeShoppingItem(index: Int) {
-		Helper.coreData.delete(shoppingItems[index])
-		shoppingItems.remove(at: index)
+	func removeShop(index: Int) {
+		Helper.coreData.delete(shops[index])
+		shops.remove(at: index)
 		
 		// save core data
 		self.saveCoreData()

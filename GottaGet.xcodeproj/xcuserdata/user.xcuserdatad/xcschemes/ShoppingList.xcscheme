@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CE8B0EFE1EA3EB77000B644F"
-               BuildableName = "ShoppingList.app"
-               BlueprintName = "ShoppingList"
-               ReferencedContainer = "container:ShoppingList.xcodeproj">
+               BuildableName = "GottaGet.app"
+               BlueprintName = "GottaGet"
+               ReferencedContainer = "container:GottaGet.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE8B0EFE1EA3EB77000B644F"
-            BuildableName = "ShoppingList.app"
-            BlueprintName = "ShoppingList"
-            ReferencedContainer = "container:ShoppingList.xcodeproj">
+            BuildableName = "GottaGet.app"
+            BlueprintName = "GottaGet"
+            ReferencedContainer = "container:GottaGet.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -56,9 +56,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE8B0EFE1EA3EB77000B644F"
-            BuildableName = "ShoppingList.app"
-            BlueprintName = "ShoppingList"
-            ReferencedContainer = "container:ShoppingList.xcodeproj">
+            BuildableName = "GottaGet.app"
+            BlueprintName = "GottaGet"
+            ReferencedContainer = "container:GottaGet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -75,9 +75,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CE8B0EFE1EA3EB77000B644F"
-            BuildableName = "ShoppingList.app"
-            BlueprintName = "ShoppingList"
-            ReferencedContainer = "container:ShoppingList.xcodeproj">
+            BuildableName = "GottaGet.app"
+            BlueprintName = "GottaGet"
+            ReferencedContainer = "container:GottaGet.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

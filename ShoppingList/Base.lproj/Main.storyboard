@@ -13,7 +13,7 @@
         <!--History-->
         <scene sceneID="niX-Zm-63N">
             <objects>
-                <viewController title="History" id="K4y-a8-6qg" customClass="HistoryViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="History" id="K4y-a8-6qg" customClass="HistoryViewController" customModule="GottaGet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZwI-Xj-ew9"/>
                         <viewControllerLayoutGuide type="bottom" id="P3B-n8-rtb"/>
@@ -27,12 +27,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RV4-KW-Nqw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1436" y="214.54272863568218"/>
+            <point key="canvasLocation" x="1436" y="669"/>
         </scene>
-        <!--Shopping List-->
+        <!--Shops-->
         <scene sceneID="emx-Dc-DHI">
             <objects>
-                <viewController title="Shopping List" id="9ix-9W-MpF" customClass="ShoppingListViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Shops" id="9ix-9W-MpF" customClass="ShopViewController" customModule="GottaGet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Xz8-Mr-Q5F"/>
                         <viewControllerLayoutGuide type="bottom" id="FJz-ZK-CCS"/>
@@ -46,7 +46,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShoppingTableViewCell" rowHeight="60" id="SbI-WT-dpR" customClass="ShoppingTableViewCell" customModule="ShoppingList" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ShopTableViewCell" rowHeight="60" id="SbI-WT-dpR" customClass="ShopTableViewCell" customModule="GottaGet" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SbI-WT-dpR" id="4YN-a1-rFC">
@@ -78,8 +78,8 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="btnRemove" destination="HaE-Xk-7bE" id="LBH-31-Fm3"/>
-                                            <outlet property="lblName" destination="K4H-im-xxy" id="DWc-0s-oht"/>
+                                            <outlet property="btnRemove" destination="HaE-Xk-7bE" id="mII-m6-A5q"/>
+                                            <outlet property="lblName" destination="K4H-im-xxy" id="EMZ-hH-MS0"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -87,7 +87,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shopping List" id="1RZ-Fr-51T">
+                    <navigationItem key="navigationItem" title="Shops" id="1RZ-Fr-51T">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2CG-Gl-Y3c">
                             <connections>
                                 <segue destination="TEM-ko-haD" kind="show" id="exn-0J-hfY"/>
@@ -95,17 +95,36 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="eCn-NF-3xQ" id="JC7-6I-bOf"/>
+                        <outlet property="tableView" destination="eCn-NF-3xQ" id="Own-h3-TYh"/>
+                        <segue destination="pHK-vD-7rD" kind="show" identifier="init" id="ZXy-Ef-XQa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="62g-og-J1L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1436" y="-439.43028485757122"/>
         </scene>
-        <!--Add Shopping List-->
+        <!--View Controller-->
+        <scene sceneID="Wg1-KF-VaN">
+            <objects>
+                <viewController id="pHK-vD-7rD" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="o5u-qz-ME1"/>
+                        <viewControllerLayoutGuide type="bottom" id="Hso-ea-sEf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FdR-o6-6GQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bYV-pp-rem" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2370" y="-99"/>
+        </scene>
+        <!--Add Shop-->
         <scene sceneID="RO9-vQ-sc1">
             <objects>
-                <viewController title="Add Shopping List" id="TEM-ko-haD" customClass="AddListViewController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Add Shop" id="TEM-ko-haD" customClass="AddShopViewController" customModule="GottaGet" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="G0l-18-nOZ"/>
                         <viewControllerLayoutGuide type="bottom" id="ZYO-nl-bCj"/>
@@ -130,7 +149,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="addBtnTapped:" destination="TEM-ko-haD" eventType="touchUpInside" id="QeD-c0-3Dl"/>
+                                    <action selector="addBtnTapped:" destination="TEM-ko-haD" eventType="touchUpInside" id="Hjk-BG-QvK"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -145,17 +164,17 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="txtListName" destination="Oru-gb-bMV" id="rCo-5S-3eY"/>
+                        <outlet property="txtListName" destination="Oru-gb-bMV" id="GJb-gx-cZJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TAW-lX-qh3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2213.5999999999999" y="-440.32983508245883"/>
+            <point key="canvasLocation" x="2367" y="-776"/>
         </scene>
         <!--Main Tabbar Controller-->
         <scene sceneID="pKm-LD-gG2">
             <objects>
-                <tabBarController id="ozm-Ra-dFR" customClass="MainTabbarController" customModule="ShoppingList" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="ozm-Ra-dFR" customClass="MainTabbarController" customModule="GottaGet" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" id="iUP-Ab-JMS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -168,7 +187,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Iw-s4-Ddb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-454" y="-112"/>
+            <point key="canvasLocation" x="-465" y="90"/>
         </scene>
         <!--Shopping List-->
         <scene sceneID="SWK-RP-41x">
@@ -206,7 +225,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="w3F-sL-IzY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496.80000000000001" y="214.54272863568218"/>
+            <point key="canvasLocation" x="495" y="669"/>
         </scene>
     </scenes>
     <resources>

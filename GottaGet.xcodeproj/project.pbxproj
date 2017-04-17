@@ -13,15 +13,15 @@
 		CE8B0F0D1EA3EB77000B644F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CE8B0F0C1EA3EB77000B644F /* Assets.xcassets */; };
 		CE8B0F101EA3EB77000B644F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CE8B0F0E1EA3EB77000B644F /* LaunchScreen.storyboard */; };
 		CE8B0F191EA3EED0000B644F /* MainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B0F181EA3EED0000B644F /* MainTabbarController.swift */; };
-		CE8B0F1D1EA3F116000B644F /* ShoppingListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B0F1C1EA3F116000B644F /* ShoppingListViewController.swift */; };
 		CE8B0F201EA3F136000B644F /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B0F1F1EA3F136000B644F /* HistoryViewController.swift */; };
-		CE8B0F231EA410FE000B644F /* ShoppingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B0F221EA410FE000B644F /* ShoppingTableViewCell.swift */; };
-		CE8B0F251EA5415D000B644F /* AddListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B0F241EA5415D000B644F /* AddListViewController.swift */; };
+		CE8B0F231EA410FE000B644F /* ShopTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B0F221EA410FE000B644F /* ShopTableViewCell.swift */; };
 		CE8B0F281EA54382000B644F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B0F271EA54382000B644F /* Helper.swift */; };
+		CE94DB4F1EA57DEB0039F4CA /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB4E1EA57DEB0039F4CA /* ShopViewController.swift */; };
+		CE94DB511EA57EA40039F4CA /* AddShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB501EA57EA40039F4CA /* AddShopViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CE8B0EFF1EA3EB77000B644F /* ShoppingList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShoppingList.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CE8B0EFF1EA3EB77000B644F /* GottaGet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GottaGet.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CE8B0F021EA3EB77000B644F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CE8B0F071EA3EB77000B644F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CE8B0F0A1EA3EB77000B644F /* ShoppingList.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ShoppingList.xcdatamodel; sourceTree = "<group>"; };
@@ -29,11 +29,11 @@
 		CE8B0F0F1EA3EB77000B644F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CE8B0F111EA3EB77000B644F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CE8B0F181EA3EED0000B644F /* MainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainTabbarController.swift; path = ViewControllers/MainTabbarController.swift; sourceTree = "<group>"; };
-		CE8B0F1C1EA3F116000B644F /* ShoppingListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingListViewController.swift; path = ViewControllers/ShoppingListViewController.swift; sourceTree = "<group>"; };
 		CE8B0F1F1EA3F136000B644F /* HistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewController.swift; path = ViewControllers/HistoryViewController.swift; sourceTree = "<group>"; };
-		CE8B0F221EA410FE000B644F /* ShoppingTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingTableViewCell.swift; path = Views/ShoppingTableViewCell.swift; sourceTree = "<group>"; };
-		CE8B0F241EA5415D000B644F /* AddListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddListViewController.swift; path = ViewControllers/AddListViewController.swift; sourceTree = "<group>"; };
+		CE8B0F221EA410FE000B644F /* ShopTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopTableViewCell.swift; path = Views/ShopTableViewCell.swift; sourceTree = "<group>"; };
 		CE8B0F271EA54382000B644F /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Helper/Helper.swift; sourceTree = "<group>"; };
+		CE94DB4E1EA57DEB0039F4CA /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopViewController.swift; path = ViewControllers/ShopViewController.swift; sourceTree = "<group>"; };
+		CE94DB501EA57EA40039F4CA /* AddShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShopViewController.swift; path = ViewControllers/AddShopViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,7 +50,7 @@
 		CE8B0EF61EA3EB77000B644F = {
 			isa = PBXGroup;
 			children = (
-				CE8B0F011EA3EB77000B644F /* ShoppingList */,
+				CE8B0F011EA3EB77000B644F /* GottaGet */,
 				CE8B0F001EA3EB77000B644F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -58,12 +58,12 @@
 		CE8B0F001EA3EB77000B644F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CE8B0EFF1EA3EB77000B644F /* ShoppingList.app */,
+				CE8B0EFF1EA3EB77000B644F /* GottaGet.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		CE8B0F011EA3EB77000B644F /* ShoppingList */ = {
+		CE8B0F011EA3EB77000B644F /* GottaGet */ = {
 			isa = PBXGroup;
 			children = (
 				CE8B0F211EA410A5000B644F /* Views */,
@@ -77,6 +77,7 @@
 				CE8B0F111EA3EB77000B644F /* Info.plist */,
 				CE8B0F091EA3EB77000B644F /* ShoppingList.xcdatamodeld */,
 			);
+			name = GottaGet;
 			path = ShoppingList;
 			sourceTree = "<group>";
 		};
@@ -100,8 +101,8 @@
 		CE8B0F1B1EA3F0F2000B644F /* ShoppingList */ = {
 			isa = PBXGroup;
 			children = (
-				CE8B0F1C1EA3F116000B644F /* ShoppingListViewController.swift */,
-				CE8B0F241EA5415D000B644F /* AddListViewController.swift */,
+				CE94DB4E1EA57DEB0039F4CA /* ShopViewController.swift */,
+				CE94DB501EA57EA40039F4CA /* AddShopViewController.swift */,
 			);
 			name = ShoppingList;
 			sourceTree = "<group>";
@@ -117,7 +118,7 @@
 		CE8B0F211EA410A5000B644F /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				CE8B0F221EA410FE000B644F /* ShoppingTableViewCell.swift */,
+				CE8B0F221EA410FE000B644F /* ShopTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -133,9 +134,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CE8B0EFE1EA3EB77000B644F /* ShoppingList */ = {
+		CE8B0EFE1EA3EB77000B644F /* GottaGet */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CE8B0F141EA3EB77000B644F /* Build configuration list for PBXNativeTarget "ShoppingList" */;
+			buildConfigurationList = CE8B0F141EA3EB77000B644F /* Build configuration list for PBXNativeTarget "GottaGet" */;
 			buildPhases = (
 				CE8B0EFB1EA3EB77000B644F /* Sources */,
 				CE8B0EFC1EA3EB77000B644F /* Frameworks */,
@@ -145,9 +146,9 @@
 			);
 			dependencies = (
 			);
-			name = ShoppingList;
+			name = GottaGet;
 			productName = ShoppingList;
-			productReference = CE8B0EFF1EA3EB77000B644F /* ShoppingList.app */;
+			productReference = CE8B0EFF1EA3EB77000B644F /* GottaGet.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -166,7 +167,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CE8B0EFA1EA3EB77000B644F /* Build configuration list for PBXProject "ShoppingList" */;
+			buildConfigurationList = CE8B0EFA1EA3EB77000B644F /* Build configuration list for PBXProject "GottaGet" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -179,7 +180,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CE8B0EFE1EA3EB77000B644F /* ShoppingList */,
+				CE8B0EFE1EA3EB77000B644F /* GottaGet */,
 			);
 		};
 /* End PBXProject section */
@@ -202,13 +203,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CE8B0F1D1EA3F116000B644F /* ShoppingListViewController.swift in Sources */,
-				CE8B0F231EA410FE000B644F /* ShoppingTableViewCell.swift in Sources */,
-				CE8B0F251EA5415D000B644F /* AddListViewController.swift in Sources */,
+				CE8B0F231EA410FE000B644F /* ShopTableViewCell.swift in Sources */,
+				CE94DB4F1EA57DEB0039F4CA /* ShopViewController.swift in Sources */,
 				CE8B0F0B1EA3EB77000B644F /* ShoppingList.xcdatamodeld in Sources */,
 				CE8B0F031EA3EB77000B644F /* AppDelegate.swift in Sources */,
 				CE8B0F201EA3F136000B644F /* HistoryViewController.swift in Sources */,
 				CE8B0F191EA3EED0000B644F /* MainTabbarController.swift in Sources */,
+				CE94DB511EA57EA40039F4CA /* AddShopViewController.swift in Sources */,
 				CE8B0F281EA54382000B644F /* Helper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,7 +366,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CE8B0EFA1EA3EB77000B644F /* Build configuration list for PBXProject "ShoppingList" */ = {
+		CE8B0EFA1EA3EB77000B644F /* Build configuration list for PBXProject "GottaGet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE8B0F121EA3EB77000B644F /* Debug */,
@@ -374,7 +375,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CE8B0F141EA3EB77000B644F /* Build configuration list for PBXNativeTarget "ShoppingList" */ = {
+		CE8B0F141EA3EB77000B644F /* Build configuration list for PBXNativeTarget "GottaGet" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CE8B0F151EA3EB77000B644F /* Debug */,
