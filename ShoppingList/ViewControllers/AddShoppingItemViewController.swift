@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddShoppingItemViewController: UIViewController {
 
@@ -15,6 +16,7 @@ class AddShoppingItemViewController: UIViewController {
 	@IBOutlet weak var tableView: UITableView!
 	
 	var chosenIndex: Int = 0
+	var shopItem: Shop?
 	
 	
     override func viewDidLoad() {
@@ -44,16 +46,39 @@ class AddShoppingItemViewController: UIViewController {
 			return
 		}
 		
-		for item in Helper.shared().shops {
-			if item.name?.isEqual(lblName.text) == true {
-				let alert = UIAlertController(title: "", message: "It is already existing.", preferredStyle: .alert)
-				alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-				self.present(alert, animated: true, completion: nil)
+		let query: NSFetchRequest<Item> = Item.fetchRequest()
+		query.predicate = NSPredicate(format: "shop == %@ && category == %@ && name == %@", (shopItem?.name)!, Helper.categories[chosenIndex], lblName.text!)
+		
+		if let array = try? Helper.coreData.fetch(query) {
+			if array.count > 1 {
+				print("db error: duplicated item is existing")
+				
+			} else if array.count == 1 {
+				let i = array[0]
+				
+				i.count += Int64(lblQuantity.text!)!
+				Helper.shared().saveCoreData()
+				self.navigationController?.popViewController(animated: true)
 				return
 			}
 		}
 		
-		Helper.shared().addShop(name: lblName.text!)
+//		for i in Helper.shared().items {
+//			if i.shop == shopItem?.name && i.category == Helper.categories[chosenIndex] && i.name == lblName.text {
+//				i.count += Int64(lblQuantity.text!)!
+//				Helper.shared().saveCoreData()
+//				self.navigationController?.popViewController(animated: true)
+//				return
+//			}
+//		}
+		
+		let item = Item(context: Helper.coreData)
+		item.name = lblName.text
+		item.count = Int64(lblQuantity.text!)!
+		item.category = Helper.categories[chosenIndex]
+		item.shop = shopItem?.name
+		
+		Helper.shared().saveCoreData()
 		
 		self.navigationController?.popViewController(animated: true)
 	}

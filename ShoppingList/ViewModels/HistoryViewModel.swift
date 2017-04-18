@@ -1,5 +1,5 @@
 //
-//  ShoppingItemViewModel.swift
+//  HistoryViewModel.swift
 //  GottaGet
 //
 //  Created by user on 4/18/17.
@@ -9,19 +9,17 @@
 import UIKit
 import CoreData
 
-
-class ShoppingItemViewModel: NSObject {
+class HistoryViewModel: NSObject {
 	var items = [String: Any]()
 	
 	override init() {
 		super.init()
 	}
 	
-	func getItems(shop: Shop) {
+	func getItems() {
 		items.removeAll()
 		
 		let query: NSFetchRequest<Item> = Item.fetchRequest()
-		query.predicate = NSPredicate(format: "shop == %@", shop.name!)
 		
 		let all = try? Helper.coreData.fetch(query)
 		for item in all! {
@@ -42,4 +40,5 @@ class ShoppingItemViewModel: NSObject {
 			}
 		}
 	}
+	
 }

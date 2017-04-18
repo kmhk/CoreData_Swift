@@ -3,14 +3,14 @@
     <entity name="Item" representedClassName="Item" syncable="YES" codeGenerationType="class">
         <attribute name="category" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="shopID" optional="YES" attributeType="Binary" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="shop" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="Shop" representedClassName="Shop" syncable="YES" codeGenerationType="class">
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Shop" positionX="-414" positionY="-504" width="128" height="58"/>
-        <element name="Item" positionX="-405" positionY="-486" width="128" height="105"/>
+        <element name="Shop" positionX="-432" positionY="-504" width="126" height="58"/>
+        <element name="Item" positionX="-216" positionY="-504" width="128" height="103"/>
     </elements>
 </model>

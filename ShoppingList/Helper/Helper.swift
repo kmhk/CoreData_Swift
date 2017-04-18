@@ -31,6 +31,7 @@ class Helper: NSObject {
 	
 	// MARK: public members
 	var shops = [Shop]()
+	var items = [Item]()
 	
 	
 	// MARK: - static methods
@@ -38,6 +39,9 @@ class Helper: NSObject {
 		if gHelper == nil {
 			gHelper = Helper()
 		}
+		
+		let _ = gHelper?.getShopList()
+		let _ = gHelper?.getItemList()
 		
 		return gHelper!
 	}
@@ -52,7 +56,7 @@ class Helper: NSObject {
 		do {
 			shops = try Helper.coreData.fetch(Shop.fetchRequest())
 		} catch {
-			print("Fetch core data failed!")
+			print("Fetch shops core data failed!")
 		}
 		
 		return shops
@@ -74,4 +78,20 @@ class Helper: NSObject {
 		self.saveCoreData()
 	}
 	
+	func getItemList() -> [Item] {
+		do {
+			items = try Helper.coreData.fetch(Item.fetchRequest())
+		} catch {
+			print("Fetch items from core data failed!")
+		}
+		
+		return items
+	}
+	
+	func removeItem(index: Int) {
+		Helper.coreData.delete(items[index])
+		items.remove(at: index)
+		
+		self.saveCoreData()
+	}
 }

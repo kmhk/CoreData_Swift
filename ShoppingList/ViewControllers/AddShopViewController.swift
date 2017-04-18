@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreData
 
 class AddShopViewController: UIViewController {
 	
@@ -28,13 +29,14 @@ class AddShopViewController: UIViewController {
 			return
 		}
 		
-		for item in Helper.shared().shops {
-			if item.name?.isEqual(txtListName.text) == true {
-				let alert = UIAlertController(title: "", message: "It is already existing.", preferredStyle: .alert)
-				alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-				self.present(alert, animated: true, completion: nil)
-				return
-			}
+		let query: NSFetchRequest<Shop> = Shop.fetchRequest()
+		query.predicate = NSPredicate(format: "name == %@", txtListName.text!)
+		
+		if let array = try? Helper.coreData.fetch(query), array.count > 0 { // query if shop is existing
+			let alert = UIAlertController(title: "", message: "It is already existing.", preferredStyle: .alert)
+			alert.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+			self.present(alert, animated: true, completion: nil)
+			return
 		}
 		
 		Helper.shared().addShop(name: txtListName.text!)
