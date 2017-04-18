@@ -18,6 +18,10 @@
 		CE8B0F281EA54382000B644F /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE8B0F271EA54382000B644F /* Helper.swift */; };
 		CE94DB4F1EA57DEB0039F4CA /* ShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB4E1EA57DEB0039F4CA /* ShopViewController.swift */; };
 		CE94DB511EA57EA40039F4CA /* AddShopViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB501EA57EA40039F4CA /* AddShopViewController.swift */; };
+		CE94DB541EA5892B0039F4CA /* ShoppingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB531EA5892B0039F4CA /* ShoppingItemViewController.swift */; };
+		CE94DB581EA5900D0039F4CA /* AddShoppingItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB571EA5900D0039F4CA /* AddShoppingItemViewController.swift */; };
+		CE94DB5A1EA592790039F4CA /* ShoppingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB591EA592790039F4CA /* ShoppingItemTableViewCell.swift */; };
+		CE94DB5C1EA592DD0039F4CA /* ShoppingItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB5B1EA592DD0039F4CA /* ShoppingItemViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +38,10 @@
 		CE8B0F271EA54382000B644F /* Helper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Helper.swift; path = Helper/Helper.swift; sourceTree = "<group>"; };
 		CE94DB4E1EA57DEB0039F4CA /* ShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShopViewController.swift; path = ViewControllers/ShopViewController.swift; sourceTree = "<group>"; };
 		CE94DB501EA57EA40039F4CA /* AddShopViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShopViewController.swift; path = ViewControllers/AddShopViewController.swift; sourceTree = "<group>"; };
+		CE94DB531EA5892B0039F4CA /* ShoppingItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingItemViewController.swift; path = ViewControllers/ShoppingItemViewController.swift; sourceTree = "<group>"; };
+		CE94DB571EA5900D0039F4CA /* AddShoppingItemViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShoppingItemViewController.swift; path = ViewControllers/AddShoppingItemViewController.swift; sourceTree = "<group>"; };
+		CE94DB591EA592790039F4CA /* ShoppingItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingItemTableViewCell.swift; path = Views/ShoppingItemTableViewCell.swift; sourceTree = "<group>"; };
+		CE94DB5B1EA592DD0039F4CA /* ShoppingItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingItemViewModel.swift; path = ViewModels/ShoppingItemViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,8 +92,9 @@
 		CE8B0F171EA3EE9B000B644F /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE94DB521EA587EC0039F4CA /* ShoppingItem */,
 				CE8B0F1E1EA3F12A000B644F /* History */,
-				CE8B0F1B1EA3F0F2000B644F /* ShoppingList */,
+				CE8B0F1B1EA3F0F2000B644F /* ShopList */,
 				CE8B0F181EA3EED0000B644F /* MainTabbarController.swift */,
 			);
 			name = ViewControllers;
@@ -94,17 +103,18 @@
 		CE8B0F1A1EA3EEDB000B644F /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				CE94DB5B1EA592DD0039F4CA /* ShoppingItemViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
 		};
-		CE8B0F1B1EA3F0F2000B644F /* ShoppingList */ = {
+		CE8B0F1B1EA3F0F2000B644F /* ShopList */ = {
 			isa = PBXGroup;
 			children = (
 				CE94DB4E1EA57DEB0039F4CA /* ShopViewController.swift */,
 				CE94DB501EA57EA40039F4CA /* AddShopViewController.swift */,
 			);
-			name = ShoppingList;
+			name = ShopList;
 			sourceTree = "<group>";
 		};
 		CE8B0F1E1EA3F12A000B644F /* History */ = {
@@ -119,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8B0F221EA410FE000B644F /* ShopTableViewCell.swift */,
+				CE94DB591EA592790039F4CA /* ShoppingItemTableViewCell.swift */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -129,6 +140,15 @@
 				CE8B0F271EA54382000B644F /* Helper.swift */,
 			);
 			name = Helper;
+			sourceTree = "<group>";
+		};
+		CE94DB521EA587EC0039F4CA /* ShoppingItem */ = {
+			isa = PBXGroup;
+			children = (
+				CE94DB531EA5892B0039F4CA /* ShoppingItemViewController.swift */,
+				CE94DB571EA5900D0039F4CA /* AddShoppingItemViewController.swift */,
+			);
+			name = ShoppingItem;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,13 +224,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				CE8B0F231EA410FE000B644F /* ShopTableViewCell.swift in Sources */,
+				CE94DB5C1EA592DD0039F4CA /* ShoppingItemViewModel.swift in Sources */,
 				CE94DB4F1EA57DEB0039F4CA /* ShopViewController.swift in Sources */,
 				CE8B0F0B1EA3EB77000B644F /* ShoppingList.xcdatamodeld in Sources */,
+				CE94DB541EA5892B0039F4CA /* ShoppingItemViewController.swift in Sources */,
 				CE8B0F031EA3EB77000B644F /* AppDelegate.swift in Sources */,
 				CE8B0F201EA3F136000B644F /* HistoryViewController.swift in Sources */,
 				CE8B0F191EA3EED0000B644F /* MainTabbarController.swift in Sources */,
+				CE94DB5A1EA592790039F4CA /* ShoppingItemTableViewCell.swift in Sources */,
 				CE94DB511EA57EA40039F4CA /* AddShopViewController.swift in Sources */,
 				CE8B0F281EA54382000B644F /* Helper.swift in Sources */,
+				CE94DB581EA5900D0039F4CA /* AddShoppingItemViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

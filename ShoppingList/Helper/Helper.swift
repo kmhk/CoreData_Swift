@@ -16,6 +16,18 @@ class Helper: NSObject {
 	// MARK: static members
 	static var App = UIApplication.shared.delegate as! AppDelegate
 	static var coreData = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+	static var categories = ["Bakery",
+	                         "Fruit & Veg",
+	                         "Dairy & Eggs",
+	                         "Meat, Fish & Poultry",
+	                         "Frozen",
+	                         "Ready meals",
+	                         "Tins & Jars",
+	                         "Cereals",
+	                         "Sweets & Snacks",
+	                         "Drinks",
+	                         "Household",
+	                         "Health & Beauty"]
 	
 	// MARK: public members
 	var shops = [Shop]()

@@ -84,5 +84,7 @@ extension ShopViewController: UITableViewDelegate, UITableViewDataSource {
 	
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+		
+		self.performSegue(withIdentifier: "segueItem", sender: indexPath)
 	}
 }
