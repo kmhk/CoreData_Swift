@@ -91,7 +91,7 @@ class Helper: NSObject {
 		items = self.getItemList()
 		for i in (0 ..< items.count).reversed() {
 			let item = items[i]
-			if item.name == shops[index].name! {
+			if item.shop == shops[index].name! {
 				Helper.coreData.delete(item)
 				items.remove(at: i)
 			}
