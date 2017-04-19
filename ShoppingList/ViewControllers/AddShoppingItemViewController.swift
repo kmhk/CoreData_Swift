@@ -165,6 +165,7 @@ extension AddShoppingItemViewController: UITextFieldDelegate {
 		let key = textField.text!
 		
 		if textField.tag == 0x100 { // for item name
+			lblCategory.text = ""
 			let _ = viewModel.getSuggestItemNames(key: key)
 		} else {
 			let _ = viewModel.getSuggestCategories(key: key, item: lblName.text!)
