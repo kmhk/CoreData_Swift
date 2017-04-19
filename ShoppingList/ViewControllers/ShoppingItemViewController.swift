@@ -35,7 +35,19 @@ class ShoppingItemViewController: UIViewController {
 		viewModel.getItems(shop: shopItem!)
 		tableView.reloadData()
 	}
-    
+	
+	
+	func onStepper(_ stepper: UIStepper) {
+		let row = stepper.tag % 100
+		let section = stepper.tag / 100
+		
+		let keys = Array(viewModel.items.keys)
+		let array = viewModel.items[keys[section]] as! [Any]
+		let dict = array[row] as! [String: Any]
+		
+		viewModel.changeItem(row: row, categoryKey: keys[section], stepper: Int64(stepper.value), purchased: dict["purchased"] as! Bool)
+		tableView.reloadData()
+	}
 
     // MARK: - Navigation
 
@@ -71,19 +83,32 @@ extension ShoppingItemViewController: UITableViewDelegate, UITableViewDataSource
 	
 	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: ShoppingItemTableViewCell.cellID, for: indexPath) as! ShoppingItemTableViewCell
-		cell.accessoryType = .checkmark
 		
 		let keys = Array(viewModel.items.keys)
 		let array = viewModel.items[keys[indexPath.section]] as! [Any]
 		let dict = array[indexPath.row] as! [String: Any]
 		
 		cell.lblName.text = dict["name"] as? String
+		
 		cell.lblCount.text = String(describing: (dict["count"] as! Int64))
+		
+		cell.accessoryType = (dict["purchased"] as! Bool == true ? .checkmark : .none)
+		
+		cell.stepper.addTarget(self, action: #selector(self.onStepper(_:)), for: .valueChanged)
+		cell.stepper.tag = indexPath.section * 100 + indexPath.row
+		cell.stepper.value = Double(dict["count"] as! Int64)
 		
 		return cell
 	}
 	
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
+		
+		let keys = Array(viewModel.items.keys)
+		let array = viewModel.items[keys[indexPath.section]] as! [Any]
+		let dict = array[indexPath.row] as! [String: Any]
+		
+		viewModel.changeItem(row: indexPath.row, categoryKey: keys[indexPath.section], stepper: dict["count"] as! Int64, purchased: !(dict["purchased"] as! Bool))
+		tableView.reloadData()
 	}
 }

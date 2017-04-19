@@ -12,6 +12,7 @@ import CoreData
 
 class ShoppingItemViewModel: NSObject {
 	var items = [String: Any]()
+	var curShop: Shop?
 	
 	override init() {
 		super.init()
@@ -20,13 +21,16 @@ class ShoppingItemViewModel: NSObject {
 	func getItems(shop: Shop) {
 		items.removeAll()
 		
+		curShop = shop
+		
 		let query: NSFetchRequest<Item> = Item.fetchRequest()
 		query.predicate = NSPredicate(format: "shop == %@", shop.name!)
 		
 		let all = try? Helper.coreData.fetch(query)
 		for item in all! {
 			let dict = ["name": item.name!,
-			            "count": item.count] as [String : Any]
+			            "count": item.count,
+			            "purchased": item.checked] as [String : Any]
 			
 			if let subs = items[item.category!] {
 				var tmps = subs as! [Any]
@@ -41,5 +45,26 @@ class ShoppingItemViewModel: NSObject {
 				items[item.category!] = tmps
 			}
 		}
+	}
+	
+	func changeItem(row: Int, categoryKey: String, stepper: Int64, purchased: Bool) {
+		let array = items[categoryKey] as! [Any]
+		let dict = array[row] as! [String: Any]
+		
+		let query: NSFetchRequest<Item> = Item.fetchRequest()
+		query.predicate = NSPredicate(format: "shop == %@ && category == %@ && name == %@", (curShop?.name!)!, categoryKey, dict["name"]! as! CVarArg)
+		
+		let all = try? Helper.coreData.fetch(query)
+		if (all?.count)! > 1 || (all?.count)! == 0 {
+			print("db error: can't change value of the shopping item!")
+			return
+		}
+		
+		all?.first?.count = stepper
+		all?.first?.checked = purchased
+		
+		Helper.shared().saveCoreData()
+		
+		self.getItems(shop: curShop!)
 	}
 }

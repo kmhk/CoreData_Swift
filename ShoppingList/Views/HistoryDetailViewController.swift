@@ -1,25 +1,28 @@
 //
-//  HistoryViewController.swift
-//  ShoppingList
+//  HistoryDetailViewController.swift
+//  GottaGet
 //
-//  Created by user on 4/16/17.
+//  Created by user on 4/19/17.
 //  Copyright © 2017 user. All rights reserved.
 //
 
 import UIKit
 
-class HistoryViewController: UIViewController {
+class HistoryDetailViewController: UIViewController {
 	
 	@IBOutlet weak var tableView: UITableView!
 	
-	var viewModel = HistoryViewModel()
+	var viewModel = HistoryDetailViewModel()
+	var item: String?
+	var category: String?
+	
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-		tableView.delegate = self
 		tableView.dataSource = self
+		tableView.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,34 +33,28 @@ class HistoryViewController: UIViewController {
 	override func viewWillAppear(_ animated: Bool) {
 		super.viewWillAppear(animated)
 		
-		viewModel.getItems()
+		self.navigationItem.title = "History of " + item!
+		
+		viewModel.getItems(item: item!, category: category!)
 		tableView.reloadData()
 	}
     
 
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-		if segue.identifier == "segueDetail" {
-			let vc = segue.destination as! HistoryDetailViewController
-			
-			let indexPath = sender as! IndexPath
-			let keys = Array(viewModel.items.keys)
-			let key = keys[indexPath.section]
-			let array = viewModel.items[key] as! [Any]
-			let dict = array[indexPath.row] as! [String: Any]
-			
-			vc.item = dict["name"] as? String
-			vc.category = key
-		}
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
+    */
 
 }
 
 
 // MARK: -
-extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
+extension HistoryDetailViewController: UITableViewDelegate, UITableViewDataSource {
 	public func numberOfSections(in tableView: UITableView) -> Int {
 		return viewModel.items.count
 	}
@@ -69,18 +66,15 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
 	}
 	
 	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-		let keys = Array(viewModel.items.keys)
-		let array = viewModel.items[keys[section]] as! [Any]
-		
-		return array.count
+		return 1
 	}
 	
 	public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
 		let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTableViewCell", for: indexPath)
 		
 		let keys = Array(viewModel.items.keys)
-		let array = viewModel.items[keys[indexPath.section]] as! [Any]
-		let dict = array[indexPath.row] as! [String: Any]
+		let key = keys[indexPath.section]
+		let dict = viewModel.items[key] as! [String: Any]
 		
 		cell.textLabel?.text = dict["name"] as? String
 		
@@ -94,6 +88,5 @@ extension HistoryViewController: UITableViewDelegate, UITableViewDataSource {
 	public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 		tableView.deselectRow(at: indexPath, animated: true)
 		
-		self.performSegue(withIdentifier: "segueDetail", sender: indexPath)
 	}
 }

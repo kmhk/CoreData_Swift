@@ -14,6 +14,7 @@ class ShoppingItemTableViewCell: UITableViewCell {
 	
 	@IBOutlet weak var lblName: UILabel!
 	@IBOutlet weak var lblCount: UILabel!
+	@IBOutlet weak var stepper: UIStepper!
 	
 
     override func awakeFromNib() {

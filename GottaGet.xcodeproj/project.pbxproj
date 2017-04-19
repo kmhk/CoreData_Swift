@@ -23,6 +23,9 @@
 		CE94DB5A1EA592790039F4CA /* ShoppingItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB591EA592790039F4CA /* ShoppingItemTableViewCell.swift */; };
 		CE94DB5C1EA592DD0039F4CA /* ShoppingItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB5B1EA592DD0039F4CA /* ShoppingItemViewModel.swift */; };
 		CE94DB5E1EA66D1A0039F4CA /* HistoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB5D1EA66D1A0039F4CA /* HistoryViewModel.swift */; };
+		CE94DB601EA6D6660039F4CA /* AddShoppingItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB5F1EA6D6660039F4CA /* AddShoppingItemViewModel.swift */; };
+		CE94DB621EA70F320039F4CA /* HistoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB611EA70F320039F4CA /* HistoryDetailViewController.swift */; };
+		CE94DB641EA717B60039F4CA /* HistoryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE94DB631EA717B60039F4CA /* HistoryDetailViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +47,9 @@
 		CE94DB591EA592790039F4CA /* ShoppingItemTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingItemTableViewCell.swift; path = Views/ShoppingItemTableViewCell.swift; sourceTree = "<group>"; };
 		CE94DB5B1EA592DD0039F4CA /* ShoppingItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShoppingItemViewModel.swift; path = ViewModels/ShoppingItemViewModel.swift; sourceTree = "<group>"; };
 		CE94DB5D1EA66D1A0039F4CA /* HistoryViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryViewModel.swift; path = ViewModels/HistoryViewModel.swift; sourceTree = "<group>"; };
+		CE94DB5F1EA6D6660039F4CA /* AddShoppingItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AddShoppingItemViewModel.swift; path = ViewModels/AddShoppingItemViewModel.swift; sourceTree = "<group>"; };
+		CE94DB611EA70F320039F4CA /* HistoryDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryDetailViewController.swift; path = Views/HistoryDetailViewController.swift; sourceTree = "<group>"; };
+		CE94DB631EA717B60039F4CA /* HistoryDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HistoryDetailViewModel.swift; path = ViewModels/HistoryDetailViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,7 +112,9 @@
 			isa = PBXGroup;
 			children = (
 				CE94DB5B1EA592DD0039F4CA /* ShoppingItemViewModel.swift */,
+				CE94DB5F1EA6D6660039F4CA /* AddShoppingItemViewModel.swift */,
 				CE94DB5D1EA66D1A0039F4CA /* HistoryViewModel.swift */,
+				CE94DB631EA717B60039F4CA /* HistoryDetailViewModel.swift */,
 			);
 			name = ViewModels;
 			sourceTree = "<group>";
@@ -124,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				CE8B0F1F1EA3F136000B644F /* HistoryViewController.swift */,
+				CE94DB611EA70F320039F4CA /* HistoryDetailViewController.swift */,
 			);
 			name = History;
 			sourceTree = "<group>";
@@ -231,14 +240,17 @@
 				CE94DB4F1EA57DEB0039F4CA /* ShopViewController.swift in Sources */,
 				CE8B0F0B1EA3EB77000B644F /* ShoppingList.xcdatamodeld in Sources */,
 				CE94DB541EA5892B0039F4CA /* ShoppingItemViewController.swift in Sources */,
+				CE94DB621EA70F320039F4CA /* HistoryDetailViewController.swift in Sources */,
 				CE8B0F031EA3EB77000B644F /* AppDelegate.swift in Sources */,
 				CE8B0F201EA3F136000B644F /* HistoryViewController.swift in Sources */,
+				CE94DB641EA717B60039F4CA /* HistoryDetailViewModel.swift in Sources */,
 				CE8B0F191EA3EED0000B644F /* MainTabbarController.swift in Sources */,
 				CE94DB5A1EA592790039F4CA /* ShoppingItemTableViewCell.swift in Sources */,
 				CE94DB511EA57EA40039F4CA /* AddShopViewController.swift in Sources */,
 				CE8B0F281EA54382000B644F /* Helper.swift in Sources */,
 				CE94DB5E1EA66D1A0039F4CA /* HistoryViewModel.swift in Sources */,
 				CE94DB581EA5900D0039F4CA /* AddShoppingItemViewController.swift in Sources */,
+				CE94DB601EA6D6660039F4CA /* AddShoppingItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

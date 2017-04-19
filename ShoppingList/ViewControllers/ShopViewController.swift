@@ -55,9 +55,14 @@ class ShopViewController: UIViewController {
 	func onRemoveShop(_ sender: Any) {
 		let index = (sender as AnyObject).tag
 		
-		Helper.shared().removeShop(index: index!)
+		let alert = UIAlertController(title: "", message: "Are you sure you want to remove this?", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "NO", style: .cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { (action) in
+			Helper.shared().removeShop(index: index!)
+			self.tableView.reloadData()
+		}))
 		
-		tableView.reloadData()
+		self.present(alert, animated: true, completion: nil)
 	}
 
 }
