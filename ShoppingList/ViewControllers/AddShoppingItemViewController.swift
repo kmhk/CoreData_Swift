@@ -164,6 +164,7 @@ extension AddShoppingItemViewController: UITableViewDelegate, UITableViewDataSou
 extension AddShoppingItemViewController: UITextFieldDelegate {
 	public func textFieldChanged(_ textField: UITextField) {
 		let key = textField.text!
+		lblCategory.isEnabled = true
 		
 		if textField.tag == 0x100 { // for item name
 			lblCategory.text = ""
@@ -172,6 +173,7 @@ extension AddShoppingItemViewController: UITextFieldDelegate {
 			let array = viewModel.getSuggestCategories(key: lblCategory.text!, item: lblName.text!)
 			if array.count == 1 {
 				lblCategory.text = array.first
+				lblCategory.isEnabled = false
 			}
 			
 		} else {
