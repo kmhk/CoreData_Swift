@@ -74,6 +74,15 @@ class Helper: NSObject {
 	}
 	
 	func removeShop(index: Int) {
+		// remove items
+		items = self.getItemList()
+		items.enumerated().forEach { (item) -> () in
+			if item.element.shop! == shops[index].name! {
+				Helper.coreData.delete(item.element)
+				items.remove(at: item.offset)
+			}
+		}
+		
 		Helper.coreData.delete(shops[index])
 		shops.remove(at: index)
 		
