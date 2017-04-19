@@ -11,7 +11,7 @@ import CoreData
 
 
 class AddShoppingItemViewModel: NSObject {
-	var categories: [Category]?
+	var categories = [String]()
 	var items = [String]()
 	
 	
@@ -20,17 +20,50 @@ class AddShoppingItemViewModel: NSObject {
 	}
 	
 	
-	func getSuggestCategories(key: String) -> [Category] {
-		let req: NSFetchRequest<Category> = Category.fetchRequest()
-		
-		if key != "" {
-			req.predicate = NSPredicate(format: "name CONTAINS[cd] %@", key)
+	func categoriesOf(item: String) -> [String] {
+		var result = [String]()
+		Helper.categories.enumerated().forEach { (offset, element) -> () in
+			let array = element.value.filter({ (i) -> Bool in
+				return (item == "" || i == item)
+			})
+			
+			if array.count > 0 {
+				result.append(element.key)
+			}
 		}
 		
-		let array = try? Helper.coreData.fetch(req)
-		categories = array?.sorted(by: {$0.0.name! < $0.1.name!})
+		let req: NSFetchRequest<Item> = Item.fetchRequest()
+		if item != "" {
+			req.predicate = NSPredicate(format: "name == %@", item)
+		}
 		
-		return categories!
+		let array = try? Helper.coreData.fetch(req).sorted(by: {$0.0.name! < $0.1.name!})
+		array?.enumerated().forEach { (i) -> () in
+			if result.contains(i.element.category!) == false {
+				result.append(i.element.category!)
+			}
+		}
+		
+		return result
+	}
+	
+	
+	func getSuggestCategories(key: String, item: String) -> [String] {
+		categories.removeAll()
+		
+		var array = categoriesOf(item: item)
+		if array.count == 0 {
+			let tmps = try? Helper.coreData.fetch(Category.fetchRequest()).sorted(by: {$0.0.name! < $0.1.name!})
+			tmps?.enumerated().forEach { (i) -> () in
+				array.append(i.element.name!)
+			}
+		}
+		
+		categories = array.filter { (i) -> Bool in
+			return (key == "" || i.uppercased().contains(key.uppercased()))
+		}
+		
+		return categories
 	}
 	
 	
@@ -53,7 +86,9 @@ class AddShoppingItemViewModel: NSObject {
 		
 		let array = try? Helper.coreData.fetch(req).sorted(by: {$0.0.name! < $0.1.name!})
 		array?.enumerated().forEach { (i) -> () in
-			items.append(i.element.name!)
+			if items.contains(i.element.name!) == false {
+				items.append(i.element.name!)
+			}
 		}
 		
 		return items

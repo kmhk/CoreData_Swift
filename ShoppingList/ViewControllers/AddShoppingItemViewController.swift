@@ -113,10 +113,20 @@ class AddShoppingItemViewController: UIViewController {
 extension AddShoppingItemViewController: UITableViewDelegate, UITableViewDataSource {
 	public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		if tableView.tag == 0x100 { // for item name
+			if viewModel.items.count == 0 {
+				tableView.isHidden = true
+			} else {
+				tableView.isHidden = false
+			}
 			return viewModel.items.count
 			
 		} else { // for category name
-			return (viewModel.categories != nil ? (viewModel.categories?.count)! : 0)
+			if viewModel.categories.count == 0 {
+				tableView.isHidden = true
+			} else {
+				tableView.isHidden = false
+			}
+			return viewModel.categories.count
 		}
 	}
 	
@@ -127,7 +137,7 @@ extension AddShoppingItemViewController: UITableViewDelegate, UITableViewDataSou
 			cell.textLabel?.text = viewModel.items[indexPath.row]
 			
 		} else { // for category name
-			cell.textLabel?.text = viewModel.categories?[indexPath.row].name
+			cell.textLabel?.text = viewModel.categories[indexPath.row]
 		}
 		
 		return cell
@@ -140,7 +150,7 @@ extension AddShoppingItemViewController: UITableViewDelegate, UITableViewDataSou
 			lblName.text = viewModel.items[indexPath.row]
 			
 		} else { // for category name
-			lblCategory.text = viewModel.categories?[indexPath.row].name
+			lblCategory.text = viewModel.categories[indexPath.row]
 		}
 		
 		lblName.resignFirstResponder()
@@ -157,7 +167,7 @@ extension AddShoppingItemViewController: UITextFieldDelegate {
 		if textField.tag == 0x100 { // for item name
 			let _ = viewModel.getSuggestItemNames(key: key)
 		} else {
-			let _ = viewModel.getSuggestCategories(key: key)
+			let _ = viewModel.getSuggestCategories(key: key, item: lblName.text!)
 		}
 		tableView.reloadData()
 	}
@@ -172,7 +182,7 @@ extension AddShoppingItemViewController: UITextFieldDelegate {
 		if textField.tag == 0x100 { // for item name
 			let _ = viewModel.getSuggestItemNames(key: textField.text!)
 		} else {
-			let _ = viewModel.getSuggestCategories(key: textField.text!)
+			let _ = viewModel.getSuggestCategories(key: textField.text!, item: lblName.text!)
 		}
 		tableView.reloadData()
 	}
