@@ -163,5 +163,69 @@
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingList/ViewModels/AddShoppingItemViewModel.swift"
+            timestampString = "514326663.302177"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "73"
+            endingLineNumber = "73"
+            landmarkName = "getSuggestItemNames(key:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GottaGet.AddShoppingItemViewModel.getSuggestItemNames (key : Swift.String) -&gt; Swift.Array&lt;Swift.String&gt;"
+                  moduleName = "GottaGet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Work/Projects/ShoppingList/ShoppingList/ViewModels/AddShoppingItemViewModel.swift"
+                  timestampString = "514326663.600045"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "73"
+                  endingLineNumber = "73"
+                  offsetFromSymbolStart = "220">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GottaGet.AddShoppingItemViewModel.(getSuggestItemNames (key : Swift.String) -&gt; Swift.Array&lt;Swift.String&gt;).(closure #1)"
+                  moduleName = "GottaGet"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Volumes/Work/Projects/ShoppingList/ShoppingList/ViewModels/AddShoppingItemViewModel.swift"
+                  timestampString = "514326663.603079"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "74"
+                  endingLineNumber = "74"
+                  offsetFromSymbolStart = "64">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "ShoppingList/ViewModels/AddShoppingItemViewModel.swift"
+            timestampString = "514326677.861837"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "81"
+            endingLineNumber = "81"
+            landmarkName = "getSuggestItemNames(key:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

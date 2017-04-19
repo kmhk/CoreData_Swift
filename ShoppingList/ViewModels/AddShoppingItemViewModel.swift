@@ -72,7 +72,7 @@ class AddShoppingItemViewModel: NSObject {
 		
 		Helper.categories.enumerated().forEach { (i) -> () in
 			i.element.value.enumerated().forEach { (j) -> () in
-				if key == "" || j.element.contains(key) == true {
+				if key == "" || j.element.lowercased().contains(key.lowercased()) == true {
 					items.append(j.element)
 				}
 			}
