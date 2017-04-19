@@ -148,6 +148,7 @@ extension AddShoppingItemViewController: UITableViewDelegate, UITableViewDataSou
 		
 		if tableView.tag == 0x100 { // for item name
 			lblName.text = viewModel.items[indexPath.row]
+			self.textFieldChanged(lblName)
 			
 		} else { // for category name
 			lblCategory.text = viewModel.categories[indexPath.row]
@@ -167,6 +168,12 @@ extension AddShoppingItemViewController: UITextFieldDelegate {
 		if textField.tag == 0x100 { // for item name
 			lblCategory.text = ""
 			let _ = viewModel.getSuggestItemNames(key: key)
+			
+			let array = viewModel.getSuggestCategories(key: lblCategory.text!, item: lblName.text!)
+			if array.count == 1 {
+				lblCategory.text = array.first
+			}
+			
 		} else {
 			let _ = viewModel.getSuggestCategories(key: key, item: lblName.text!)
 		}
