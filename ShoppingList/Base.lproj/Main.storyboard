@@ -40,7 +40,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="History" id="gW1-XM-Skg"/>
+                    <navigationItem key="navigationItem" title="History" id="gW1-XM-Skg">
+                        <barButtonItem key="rightBarButtonItem" title="Remove All" id="7Bx-Ew-0uc">
+                            <connections>
+                                <action selector="onRemoveAll:" destination="K4y-a8-6qg" id="Obs-hz-9Aj"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="fi3-PX-Pny" id="yM8-QK-lew"/>
                         <segue destination="JN8-WE-oSj" kind="show" identifier="segueDetail" id="mcR-9d-TPU"/>
@@ -109,7 +115,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SbI-WT-dpR" id="4YN-a1-rFC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HaE-Xk-7bE">

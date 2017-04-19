@@ -34,6 +34,17 @@ class HistoryViewController: UIViewController {
 		tableView.reloadData()
 	}
     
+	@IBAction func onRemoveAll(_ sender: Any) {
+		let alert = UIAlertController(title: "", message: "Are you sure you want to remove this?", preferredStyle: .alert)
+		alert.addAction(UIAlertAction(title: "NO", style: .cancel, handler: nil))
+		alert.addAction(UIAlertAction(title: "YES", style: .default, handler: { (action) in
+			Helper.shared().removeAllShop();
+			self.viewModel.getItems()
+			self.tableView.reloadData()
+		}))
+		
+		self.present(alert, animated: true, completion: nil)
+	}
 
     // MARK: - Navigation
 

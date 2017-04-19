@@ -73,13 +73,27 @@ class Helper: NSObject {
 		self.saveCoreData()
 	}
 	
+	func removeAllShop() {
+		items = self.getItemList()
+		
+		for i in (0 ..< items.count).reversed() {
+			let item = items[i]
+			Helper.coreData.delete(item)
+			items.remove(at: i)
+		}
+		
+		// save core data
+		self.saveCoreData()
+	}
+	
 	func removeShop(index: Int) {
 		// remove items
 		items = self.getItemList()
-		items.enumerated().forEach { (item) -> () in
-			if item.element.shop! == shops[index].name! {
-				Helper.coreData.delete(item.element)
-				items.remove(at: item.offset)
+		for i in (0 ..< items.count).reversed() {
+			let item = items[i]
+			if item.name == shops[index].name! {
+				Helper.coreData.delete(item)
+				items.remove(at: i)
 			}
 		}
 		

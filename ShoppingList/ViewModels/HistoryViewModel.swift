@@ -19,6 +19,11 @@ class HistoryViewModel: NSObject {
 	}
 	
 	
+	func removeAll() {
+		
+	}
+	
+	
 	func addItem(tmps: [Any], dict:[String: Any]) -> [Any] {
 		var array = tmps as! [[String: Any]]
 
