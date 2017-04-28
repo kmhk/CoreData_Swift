@@ -198,8 +198,11 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="twv-lr-4xN">
+                                                    <rect key="frame" x="273" y="27" width="94" height="29"/>
+                                                </stepper>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGX-c5-GtZ">
-                                                    <rect key="frame" x="251" y="5" width="53" height="21"/>
+                                                    <rect key="frame" x="294" y="6" width="53" height="21"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="53" id="1NN-am-2l9"/>
                                                         <constraint firstAttribute="height" constant="21" id="v6w-e8-fmy"/>
@@ -208,19 +211,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="twv-lr-4xN">
-                                                    <rect key="frame" x="230" y="25" width="94" height="29"/>
-                                                </stepper>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dGX-c5-GtZ" firstAttribute="top" secondItem="lwz-wI-gnP" secondAttribute="topMargin" constant="-3" id="4oO-RI-H1O"/>
+                                                <constraint firstItem="dGX-c5-GtZ" firstAttribute="top" secondItem="lwz-wI-gnP" secondAttribute="topMargin" constant="-2" id="4oO-RI-H1O"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="zds-ZH-HgC" secondAttribute="bottom" constant="5.5" id="M3Y-aS-DOi"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="twv-lr-4xN" secondAttribute="bottom" constant="1.5" id="Wnb-Qn-Msr"/>
                                                 <constraint firstAttribute="topMargin" secondItem="zds-ZH-HgC" secondAttribute="top" id="ZW4-II-Hgh"/>
-                                                <constraint firstItem="dGX-c5-GtZ" firstAttribute="leading" secondItem="lwz-wI-gnP" secondAttribute="leadingMargin" constant="243" id="aqt-8G-LdR"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="dGX-c5-GtZ" secondAttribute="trailing" constant="20" id="aDt-XE-Ndr"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="zds-ZH-HgC" secondAttribute="trailing" constant="145" id="bOs-36-ddL"/>
                                                 <constraint firstAttribute="leadingMargin" secondItem="zds-ZH-HgC" secondAttribute="leading" constant="-15" id="cAS-X3-dkC"/>
-                                                <constraint firstItem="twv-lr-4xN" firstAttribute="leading" secondItem="lwz-wI-gnP" secondAttribute="leadingMargin" constant="222" id="cC1-ci-JHr"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="twv-lr-4xN" secondAttribute="bottom" id="hnA-KR-FB1"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="twv-lr-4xN" secondAttribute="trailing" id="mJ3-DA-siy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
